@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Fruits</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fruit of fruits" (click)="clickTable(fruit, $event)" [class.active]="isFruitSelected(fruit)">
+        <td>{{fruit.id}}</td>
+        <td>{{fruit.name}}</td>
+        <td>{{fruit.des}}</td>
+        <td>{{fruit.amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pre>{{selectedFruitArray | json}}</pre>
+</div>
