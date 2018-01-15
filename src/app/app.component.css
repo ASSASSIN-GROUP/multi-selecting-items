@@ -1,0 +1,7 @@
+td {
+    padding: 5px;
+}
+
+.active {
+    color: rgb(221, 20, 20);
+}
