@@ -10,9 +10,14 @@ import { FruitService } from '../services/fruit.service';
 export class ListComponent implements OnInit {
 
   selectedFruitArray = [];
-  constructor() { }
+  fruits: Fruit[] = [];
+  constructor(private fruitService: FruitService) { }
 
-  ngOnInit() {
+  getListFruits(): void {
+    this.fruits = this.fruitService.getFruits();
+  }
+  ngOnInit(): void {
+    this.getListFruits();
   }
 
   toggleItemInArr(arr, item) {
